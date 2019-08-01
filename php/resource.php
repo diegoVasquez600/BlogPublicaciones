@@ -1,9 +1,5 @@
-﻿<!--
-    
- @Nombre：BlogPublicaciones
- @Autores：Diego Rios, Tomas Castrillos, Diego Perez
- 
--->
+<?php
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -216,3 +212,5 @@
     <script src="../js/global.js"></script>
 </body>
 </html>
+
+<?php
