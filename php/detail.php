@@ -1,5 +1,3 @@
-<?php 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -296,4 +294,3 @@ Pagesize (laypageId, pageSize) .callback (function (newPageSize) {
 </body>
 </html>
 
-<?php

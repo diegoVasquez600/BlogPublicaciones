@@ -1,4 +1,3 @@
-<?php
 
         <head>
             <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
@@ -394,5 +393,3 @@
                 <li class="layui-icon layui-fixbar-top" lay-type="top" style="display: none;"></li>
             </ul>
         </body>
-
-<?php
