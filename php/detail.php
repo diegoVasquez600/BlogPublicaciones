@@ -1,0 +1,299 @@
+<?php 
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=gb2312">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>KNX Blog</title>
+    <link rel="shortcut icon" href="../images/Logo_40.png" type="image/x-icon">
+    <!--Layui-->
+    <link href="../plug/layui/css/layui.css" rel="stylesheet" />
+    <!--font-awesome-->
+    <link href="../plug/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+   
+    <link href="../css/global.css" rel="stylesheet" />
+    
+    <link href="../css/prettify.css" rel="stylesheet" />
+    
+    <link href="../css/detail.css" rel="stylesheet" />
+</head>
+<body>
+ 
+    <nav class="blog-nav layui-header">
+        <div class="blog-container">
+           
+            <a href="javascript:;" class="blog-user">
+                <i class="fa fa-qq"></i>
+            </a>
+            <a href="javascript:;" class="blog-user layui-hide">
+                <img src="../images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
+            </a>
+            <!-- 不落阁 -->
+            <a class="blog-logo" href="home.html">KNK Blog</a>
+            
+            <ul class="layui-nav" lay-filter="nav">
+                <li class="layui-nav-item">
+                    <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;Inicio</a>
+                </li>
+                <li class="layui-nav-item  layui-this">
+                    <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;Articulos</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;Intercambio de recursos</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="timeline.html"><i class="fa fa-hourglass-half fa-fw"></i>&nbsp;Timelines</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;Sobre nosotros</a>
+                </li>
+            </ul>
+            <!-- 手机和平板的导航开关 -->
+            <a class="blog-navicon" href="javascript:;">
+                <i class="fa fa-navicon"></i>
+            </a>
+        </div>
+    </nav>
+    
+    <div class="blog-body">
+        <div class="blog-container">
+            <blockquote class="layui-elem-quote sitemap layui-breadcrumb shadow">
+                <a href="home.html" title="网站首页"> Inicio</a>
+                <a href="article.html" title="文章专栏">Columna del artículo</a>
+                <a><cite>¡Basado en el módulo de extensión de página de layui!</cite></a>
+            </blockquote>
+            <div class="blog-main">
+                <div class="blog-main-left">
+                    
+                    <div class="article-detail shadow">
+                        <div class="article-detail-title">
+                            ¡Módulo de extensión Layui basado en laypage (pagesize.js)!
+                        </div>
+                        <div class="article-detail-info">
+                            <span>Tiempo de edición：2017/3/18 17:30:22</span>
+                            <span>Autor：Absolutely</span>
+                            <span>Vistas de página：12</span>
+                        </div>
+                        <div class="article-detail-content">
+                            <p style="text-align:center;">
+                                <strong><span style="font-size:18px;">La apuesta pequeña es rápida.</span></strong>
+                            </p>
+                            <p style="text-align:center;">
+                                <strong>
+                                    <span style="font-size:18px;">
+                                        <br />
+                                    </span>
+                                </strong>
+                            </p>
+                            <p style="text-align:center;">
+                                <img src="http://www.lyblogs.cn/kindeditor/attached/image/20170318/20170318175743_4625.gif" width="100%" height="auto" title="pagesize演示" alt="pagesize演示" />
+                            </p>
+                            <p style="text-align:left;">
+                                <br />
+                            </p>
+                            <hr />
+                            <p>
+                                <br />
+                            </p>
+                            <div style="text-align:center;">
+                                &nbsp; &nbsp; <span style="color:#EE33EE;">Prólogo</span>：Si no ha utilizado el marco layui o el módulo laypage, ¡ignore este artículo!
+                            </div>
+                            <hr />
+                            <p>
+                                <br />
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;pagesize.js Es un módulo de extensión layui basado en layui escrito por el blogger. ¡Se expandió la función de control de capacidad de la página que Laypage no tiene actualmente!
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Dado que el módulo de página de paginación de layui no tiene la función de controlar la capacidad de la página (layui 2.0 no sabe si lo será), ¡creé dicha función para mi propio sistema de administración de fondo!
+                            </p>
+                            <p>
+                                &nbsp; &nbsp; Al principio pensé en usarlo yo mismo, simplemente escribí un método, y luego pensé en la fecha de lanzamiento de layui2.0. ¡No sé cómo hacer de este método un módulo para compartir!
+                            </p>
+                            <p>
+                                &nbsp; &nbsp; pageszie.jsUse layui para definir la definición del método del módulo, de modo que pueda cargarlo usando layui para cargar otros módulos.，<span style="color:#EE33EE;">Premisa</span>Pones pagesize.js en el directorio / layui / lay / modules /.
+                            </p>
+                            <p>
+                                <br />
+                            </p>
+                            <p>
+                                &nbsp; &nbsp; El método de carga es el siguiente:
+                            </p>
+<pre class="prettyprint linenums lang-js">layui.use('pagesize',function(){
+    var pagesize = layui.pagesize();
+});</pre>
+                            <p>
+                                &nbsp;&nbsp; &nbsp; Principalmente proporciona dos funciones, una es representar el código html de la capacidad de una página de control en la página de diseño original, y la otra es devolver la nueva capacidad de página determinada al hacer clic en Aceptar.
+                            </p>
+                            <p>
+                                <br />
+                            </p>
+                            <p>
+                                &nbsp; &nbsp; Shǐyòng fāngfǎ rúxià 6/5000 Como usar：
+                            </p>
+<pre class="prettyprint linenums lang-js">/ / ¡Tenga en cuenta que este método debe ejecutarse después del método laypage (seetiongs), es decir, después de que se renderice el laypage! De lo contrario, puede haber un accidente.
+Pagesize (laypageId, pageSize) .callback (function (newPageSize) {
+     / / Esta función de devolución de llamada se activa después de especificar una nueva capacidad de página
+     // y devuelve la nueva capacidad de página
+     // ¡Puede volver a adquirir datos de paginación aquí con la nueva capacidad de página!
+});</pre>
+                            &nbsp;&nbsp; &nbsp;<span style="color:#EE33EE;">/ Descripción del parámetro</span>：
+                            <p>
+                                &nbsp; &nbsp; <span style="color:#337FE5;"><strong>laypageId</strong></span>：El atributo id del elemento contenedor laypage es el mismo que el atributo cont de laypage (configuración). Dado que el atributo cont de laypage no se ha visto antes, el objeto dom o jquery se puede pasar, por lo que aquí solo se admite el atributo id de elemento.
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color:#337FE5;">pageSize</span></strong>：当前页容量，用于将当前页容量显示在界面上！
+                            </p>
+                            <p>
+                                <br />
+                            </p>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;Esta característica es una característica que se extendió cuando estaba paginando en segundo plano, pero quería compartirla, así que hice el módulo de extensión layui.<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;Debido a que fue diseñado originalmente para la extensión de mi paginación de fondo personal, solo probé la forma en que escribí la paginación, ¡no sé si se puede usar la paginación de todos!<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;Si no puede usarlo, consulte mi paginación de fondo.<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;No hay código fuente en segundo plano, no hay tiempo para organizarse, así que ¡compruébalo en segundo plano!
+                            </p>
+                            <hr />
+                            <p>
+                                <br />
+                            </p>
+                            <p>
+                                &nbsp; &nbsp; Me gusta：<a href="http://fly.layui.com/case/2017/" target="_blank"><span style="color:#337FE5;">Haga clic para ir</span></a>&nbsp; &nbsp;Para una demostración completa, vea los antecedentes.：<span><a href="http://www.lyblogs.cn/admin" target="_blank"><span style="color:#337FE5;">Haga clic para ir</span></a></span>&nbsp; &nbsp; Dirección de descarga de Pagesize.js:<a href="https://pan.baidu.com/s/1kVK8UhT" target="_blank"><span style="color:#337FE5;">Haga clic para ir</span></a>
+                            </p>
+                            <hr />
+                            &nbsp; &nbsp;De: no cayendo
+                            <p>
+                                &nbsp; &nbsp; Dirección：<a href="http://www.lyblogs.cn" target="_blank">www.lyblogs.cn</a>
+                            </p>
+                            <p>
+                                &nbsp; &nbsp;Por favor indique la fuente!<img src="http://www.lyblogs.cn/kindeditor/plugins/emoticons/images/0.gif" border="0" alt="" />
+                            </p>
+                            <p>
+                                <br />
+                            </p>
+                        </div>
+                    </div>
+                   
+                    <div class="blog-module shadow" style="box-shadow: 0 1px 8px #a6a6a6;">
+                        <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
+                            <legend>Digamos dos oraciones.</legend>
+                            <div class="layui-field-box">
+                                <form class="layui-form blog-editor" action="">
+                                    <div class="layui-form-item">
+                                        <textarea name="editorContent" lay-verify="content" id="remarkEditor" placeholder="请输入内容" class="layui-textarea layui-hide"></textarea>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">Enviar un comentario</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>
+                        <div class="blog-module-title">Último comentario</div>
+                        <ul class="blog-comment">
+                            <li>
+                                <div class="comment-parent">
+                                    <img src="../images/Absolutely.jpg" alt="absolutely" />
+                                    <div class="info">
+                                        <span class="username">Absolutely</span>
+                                        <span class="time">2017-03-18 18:46:06</span>
+                                    </div>
+                                    <div class="content">
+                                        ¡Hice un comentario falso para todos! Además, esta función de comentario puede cambiarse al mismo mensaje que el mensaje, pero aún no ha cambiado. Si está interesado, puede cambiarlo usted mismo.
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-main-right">
+                    
+                    <div class="category-toggle"><i class="fa fa-chevron-left"></i></div>
+                    <div class="article-category shadow">
+                        <div class="article-category-title">Navegación clasificada</div>
+                        <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">ASP.NET MVC</a>
+                        <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">SQL Server</a>
+                        <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Entity Framework</a>
+                        <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Navegación clasificada</a>
+                        <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Fundación C #</a>
+                        <a href="javascript:layer.msg(&#39;切换到相应分类&#39;)">Ensayo ensayo</a>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="blog-module shadow">
+                        <div class="blog-module-title">Artículos similares</div>
+                        <ul class="fa-ul blog-module-ul">
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">¡Módulo de extensión Layui basado en laypage (pagesize.js)!</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">¡Módulo de extensión Layui basado en laypage (pagesize.js)!</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">¡Módulo de extensión Layui basado en laypage (pagesize.js)!</a></li>
+                        </ul>
+                    </div>
+                    <div class="blog-module shadow">
+                        <div class="blog-module-title">Solo mira a tu alrededor</div>
+                        <ul class="fa-ul blog-module-ul">
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（一）（HTML篇）</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC制作404跳转（非302和200）</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（三）（JS篇）</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">基于laypage的layui扩展模块（pagesize.js）！</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">一步步制作时光轴（二）（CSS篇）</a></li>
+                            <li><i class="fa-li fa fa-hand-o-right"></i><a href="detail.html">写了个Win10风格快捷菜单！</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <footer class="blog-footer">
+        <p><span>Copyright</span><span>&copy;</span><span>2017</span><a href="http://www.lyblogs.cn">不落阁</a><span>Design By LY</span></p>
+        <p><a href="http://www.miibeian.gov.cn/" target="_blank">蜀ICP备16029915号-1</a></p>
+    </footer>
+    <!--侧边导航-->
+    <ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
+        <li class="layui-nav-item">
+            <a href="home.html"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+        </li>
+        <li class="layui-nav-item layui-this">
+            <a href="article.html"><i class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="resource.html"><i class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="timeline.html"><i class="fa fa-road fa-fw"></i>&nbsp;点点滴滴</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html"><i class="fa fa-info fa-fw"></i>&nbsp;关于本站</a>
+        </li>
+    </ul>
+    <!--分享窗体-->
+    <div class="blog-share layui-hide">
+        <div class="blog-share-body">
+            <div style="width: 200px;height:100%;">
+                <div class="bdsharebuttonbox">
+                    <a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                    <a class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--遮罩-->
+    <div class="blog-mask animated layui-hide"></div>
+    <!-- layui.js -->
+    <script src="../plug/layui/layui.js"></script>
+    
+    <script src="../js/global.js"></script>
+    <!-- 比较好用的代码着色插件 -->
+    <script src="../js/prettify.js"></script>
+    
+    <script src="../js/detail.js"></script>
+</body>
+</html>
+
+<?php
